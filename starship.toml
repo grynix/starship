@@ -1,0 +1,139 @@
+format = """
+[](color_fg0)\
+$os\
+$username\
+[](bg:color_bg0 fg:color_fg0)\
+$directory\
+[](fg:color_bg0 bg:color_bg3)\
+$git_branch\
+$git_status\
+[](fg:color_bg3 bg:#212736)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+$conda\
+[](fg:#212736 bg:#1d2230)\
+$cmd_duration\
+[ ](fg:#1d2230)\
+\n$character
+"""
+
+palette = 'tokyo'
+
+[palettes.tokyo]
+color_fg0 = '#a3aed2'
+color_fg1 = '#e3e5e5'
+color_fg2 = '#e3e5e5'
+color_bg0 = '#769ff0'
+color_bg1 = '#3c3836'
+color_bg3 = '#394260'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[directory]
+style = "fg:color_fg1 bg:color_bg0"
+format = "[ $path ]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
+
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol $branch ](fg:color_bg0 bg:color_bg3)]($style)'
+
+[git_status]
+style = "bg:color_bg3"
+format = '[[($all_status$ahead_behind )](fg:color_bg0 bg:color_bg3)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:color_bg0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:color_bg0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:color_bg0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:color_bg0 bg:#212736)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version $virtualenv($style))](fg:color_bg0 bg:#212736)]($style)'
+detect_extensions = ["py"]
+detect_files = ["requirements.txt"]
+detect_folders = []
+pyenv_version_name = false
+disabled = false
+
+[conda]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($environment) ](fg:color_bg0 bg:#212736)]($style)'
+ignore_base = true
+disabled = false
+
+[time]
+disabled = true
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[cmd_duration]
+disabled = false
+style = "bg:#1d2230"
+format = '[[  $duration ](fg:#a0a9cb bg:#1d2230)]($style)'
+min_time = 0
+
+[os]
+disabled = false
+style = "bg:color_fg0 fg:black"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:color_fg0 fg:black"
+style_root = "bg:color_fg0 fg:black"
+format = '[ $user ]($style)'
