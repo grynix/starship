@@ -114,6 +114,7 @@ style = "bg:color_fg0 fg:black"
 [os.symbols]
 Windows = "󰍲"
 Ubuntu = "󰕈"
+Pop = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
